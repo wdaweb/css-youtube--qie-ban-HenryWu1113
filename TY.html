@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT 切版(僅FULL HD適用)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            /* box-sizing: border-box; */
+            height: 100%;
+            overflow: hidden;
+            width: 1920px;
+
+        }
+
+        #header {
+            width: 100%;
+            height: 60px;
+            position: fixed;
+            top: 0;
+            background-color: white;
+        }
+
+        /* #header::after {
+            content: '';
+            clear: both;
+        } */
+
+        .container1 {
+            width: 98%;
+            /* height: 50px; */
+            /* background-color: lightpink; */
+            text-align: center;
+            margin: auto;
+        }
+
+        .logo {
+            float: left;
+            height: 60px;
+            /* width: 300px; */
+        }
+
+        .logo .bar {
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            float: left;
+            /* margin-right: 1rem; */
+        }
+
+        .logo .bar button {
+            border: none;
+            background-color: white;
+            padding: 0;
+        }
+
+        .logo .bar i {
+            font-size: 1.3rem;
+            vertical-align: middle;
+        }
+
+        .logo .pic {
+            float: left;
+            height: 60px;
+        }
+
+        .logo .pic img {
+            height: 100%;
+        }
+
+        .search {
+            display: inline-block;
+            /* margin: auto; */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            line-height: 60px;
+            font-size: 0;
+        }
+
+        .search input {
+            width: 550px;
+            height: 35px;
+            font-size: 1rem;
+            appearance: none;
+            border: 1px solid #999;
+            vertical-align: middle;
+        }
+
+        .search button {
+            width: 65px;
+            height: 39px;
+            font-size: 1rem;
+            appearance: none;
+            border: 1px solid #999;
+            vertical-align: middle;
+        }
+
+        .search .record {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 0.5rem;
+            border: none;
+        }
+
+        .account {
+            float: right;
+            height: 60px;
+            line-height: 60px;
+        }
+
+        .account .btn {
+            display: inline-block;
+        }
+
+        .account .btn button {
+            border: none;
+            background-color: white;
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .account .login {
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            border: 1px solid rgb(0, 102, 255);
+            border-radius: 3px;
+            color: rgb(0, 102, 255);
+        }
+
+        #left {
+            float: left;
+            margin-top: 60px;
+            padding-top: 9px;
+            width: 240px;
+            height: calc(100% - 60px);
+            /* background: green; */
+            overflow: auto;
+        }
+
+        #left .home {
+            width: 100%;
+            height: 40px;
+            /* background: blue; */
+            line-height: 40px;
+        }
+
+        #left .home i {
+            vertical-align: middle;
+            width: 20px;
+            margin: 0 1.5rem;
+        }
+
+        #left .home span {
+            font-size: 1rem;
+        }
+
+        #left .home:hover {
+            cursor: pointer;
+            background-color: rgb(226, 226, 226);
+        }
+
+        #left hr {
+            margin: 9px 0;
+            border-color: rgba(253, 253, 253, 0.5);
+            width: 210px;
+        }
+
+        #left p {
+            margin: 0 1.5rem;
+
+        }
+
+        #left .login {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid rgb(0, 102, 255);
+            border-radius: 3px;
+            color: rgb(0, 102, 255);
+            margin: 1.5rem 1.5rem 0;
+        }
+
+        .login:hover {
+            cursor: pointer;
+        }
+
+        #left h4 {
+            font-size: 1rem;
+            margin-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .cc {
+            font-size: small;
+            color: #555;
+        }
+
+        #right {
+            float: right;
+            margin-top: 60px;
+            width: 87%;
+            height: calc(100% - 60px);
+        }
+
+
+
+        #right .list {
+            border-top-width: 1px;
+            border-top-style: solid;
+            border-top-color: rgba(200, 200, 200);
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgba(200, 200, 200);
+            text-align: center;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            margin-bottom: 2rem;
+        }
+
+        #right .container2 {
+            width: 1110px;
+            margin: auto;
+            /* background-color: rgba(0, 0, 0, 0.5); */
+        }
+
+        #right .list input {
+            display: none;
+        }
+
+        #right .list .selection-2 {
+            border: 1px solid rgba(200, 200, 200);
+            display: inline-block;
+            width: 54px;
+            height: 32px;
+            margin: 0 4px;
+            background-color: rgba(240, 240, 240);
+            line-height: 32px;
+            border-radius: 30px;
+        }
+
+        #right .list .selection-3 {
+            border: 1px solid rgba(200, 200, 200);
+            display: inline-block;
+            width: 68px;
+            height: 32px;
+            margin: 0 4px;
+            background-color: rgba(240, 240, 240);
+            line-height: 32px;
+            border-radius: 30px;
+        }
+
+        #right .list .selection-4 {
+            border: 1px solid rgba(200, 200, 200);
+            display: inline-block;
+            width: 83px;
+            height: 32px;
+            margin: 0 4px;
+            background-color: rgba(240, 240, 240);
+            line-height: 32px;
+            border-radius: 30px;
+        }
+
+        #right .list .selection-6 {
+            border: 1px solid rgba(200, 200, 200);
+            display: inline-block;
+            width: 111px;
+            height: 32px;
+            margin: 0 4px;
+            background-color: rgba(240, 240, 240);
+            line-height: 32px;
+            border-radius: 30px;
+        }
+
+        #right .list .selection-9 {
+            border: 1px solid rgba(200, 200, 200);
+            display: inline-block;
+            width: 154px;
+            height: 32px;
+            margin: 0 4px;
+            background-color: rgba(240, 240, 240);
+            line-height: 32px;
+            border-radius: 30px;
+        }
+
+        #right .container2 div {
+            cursor: pointer;
+        }
+
+        #right .list input:checked+div {
+            border: 1px solid #000;
+            background-color: black;
+            color: white;
+        }
+
+        #right .content {
+            width: 100%;
+            height: calc(100% - 60px);
+            overflow: scroll;
+        }
+
+        .container3 {
+            width: 1600px;
+            height: 50px;
+            margin: auto;
+        }
+
+        .col {
+            width: 384px;
+            float: left;
+            padding: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            position: relative;
+        }
+
+        .card:hover {
+            cursor: pointer;
+        }
+
+        .card span {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .card .p1 {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .p2 {
+            width: 36px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 0.5rem;
+        }
+
+        .card .w1 {
+            margin: 0.5rem 45px 0;
+            font-size: 14px;
+            color: #555;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .card .w2 {
+            margin: 0 45px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .time {
+            width: 32px;
+            height: 15px;
+            line-height: 15px;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            right: 5%;
+            bottom: 31%;
+            transform: translate(50%, 50%);
+            border-radius: 2px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container1">
+            <div class="logo">
+                <div class="bar">
+                    <button><i class="fa-solid fa-bars"></i></button>
+                </div>
+                <div class="pic">
+                    <a href="#"><img src="./YouTube-Logo.png"></a>
+                </div>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="搜尋">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="record"><i class="fa-solid fa-microphone"></i></button>
+            </div>
+            <div class="account">
+                <div class="btn">
+                    <button><i class="fa-solid fa-table-cells"></i></button>
+                    <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+                <div class="login">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span>登入</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="left">
+        <div class="home">
+            <i class="fa-solid fa-house"></i>
+            <span>首頁</span>
+        </div>
+        <div class="home">
+            <i class="fa-regular fa-compass"></i>
+            <span>探索</span>
+        </div>
+        <div class="home">
+            <i class="fa-regular fa-circle-play"></i>
+            <span>Shorts</span>
+        </div>
+        <div class="home">
+            <i class="fa-solid fa-tv"></i>
+            <span>訂閱內容</span>
+        </div>
+        <hr>
+        <div class="home">
+            <i class="fa-solid fa-circle-play"></i>
+            <span>媒體庫</span>
+        </div>
+        <div class="home">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span>觀看紀錄</span>
+        </div>
+        <hr>
+        <p>
+            登入帳戶即可對影片表示喜歡、發布留言及訂閱頻道。
+        </p>
+        <div class="login">
+            <i class="fa-regular fa-circle-user"></i>
+            <span>登入</span>
+        </div>
+        <hr>
+        <h4>YOUTUBE 精選</h4>
+        <div class="home">
+            <i class="fa-solid fa-music"></i>
+            <span>音樂</span>
+        </div>
+        <div class="home">
+            <i class="fa-solid fa-trophy"></i>
+            <span>體育</span>
+        </div>
+        <div class="home">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>遊戲</span>
+        </div>
+        <div class="home">
+            <i class="fa-solid fa-film"></i>
+            <span>電影</span>
+        </div>
+        <div class="home">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>新聞</span>
+        </div>
+        <div class="home">
+            <i class="fa-solid fa-tower-broadcast"></i>
+            <span>直播</span>
+        </div>
+        <div class="home">
+            <i class="fa-solid fa-vr-cardboard"></i>
+            <span>360 度影片</span>
+        </div>
+        <hr>
+        <div class="home">
+            <i class="fa-solid fa-circle-plus"></i>
+            <span>瀏覽頻道</span>
+        </div>
+        <hr>
+        <h4>更多 YOUTUBE 功能</h4>
+        <div class="home">
+            <i class="fa-brands fa-youtube"></i>
+            <span>YouTube Premium</span>
+        </div>
+        <div class="home">
+            <i class="fa-solid fa-podcast"></i>
+            <span>直播</span>
+        </div>
+        <hr>
+        <div class="home">
+            <i class="fa-solid fa-gear"></i>
+            <span>設定</span>
+        </div>
+        <div class="home">
+            <i class="fa-regular fa-font-awesome"></i>
+            <span>檢舉紀錄</span>
+        </div>
+        <div class="home">
+            <i class="fa-regular fa-circle-question"></i>
+            <span>說明</span>
+        </div>
+        <div class="home">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>提供意見</span>
+        </div>
+        <hr>
+        <p class="cc">
+            簡介 媒體 版權 與我們聯絡創作者 廣告 開發人員
+        </p>
+        <br>
+        <p class="cc">
+            條款 隱私權 政策與安全性 YouTube 運作方式 測試新功能
+        </p>
+        <br>
+        <p class="cc" style="margin-bottom:1rem;">
+            © 2022 Google LLC
+        </p>
+    </div>
+    <div id="right">
+        <div class="list">
+            <div class="container2">
+                <label for="l01">
+                    <input id="l01" type="radio" name="select" checked>
+                    <div class="selection-2">全部</div>
+                </label>
+                <label for="l02">
+                    <input id="l02" type="radio" name="select">
+                    <div class="selection-2">合輯</div>
+                </label>
+                <label for="l03">
+                    <input id="l03" type="radio" name="select">
+                    <div class="selection-2">遊戲</div>
+                </label>
+                <label for="l04">
+                    <input id="l04" type="radio" name="select">
+                    <div class="selection-2">音樂</div>
+                </label>
+                <label for="l05">
+                    <input id="l05" type="radio" name="select">
+                    <div class="selection-3">直播中</div>
+                </label>
+                <label for="l06">
+                    <input id="l06" type="radio" name="select">
+                    <div class="selection-2">籃球</div>
+                </label>
+                <label for="l07">
+                    <input id="l07" type="radio" name="select">
+                    <div class="selection-6">動作冒險遊戲</div>
+                </label>
+                <label for="l08">
+                    <input id="l08" type="radio" name="select">
+                    <div class="selection-2">卡通</div>
+                </label>
+                <label for="l09">
+                    <input id="l09" type="radio" name="select">
+                    <div class="selection-2">烹飪</div>
+                </label>
+                <label for="l10">
+                    <input id="l10" type="radio" name="select">
+                    <div class="selection-4">最新上傳</div>
+                </label>
+                <label for="l11">
+                    <input id="l11" type="radio" name="select">
+                    <div class="selection-9">讓你耳目一新的影片</div>
+                </label>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container3">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="p1" src="./des.jpg"><br>
+                            <img class="p2" src="./channels4_profile.jpg">
+                            <span>Luis Fonsi - Despacito ft. Daddy Yankee</span>
+                            <p class="w1">Luis Fonsi</p>
+                            <p class="w2">觀看次數 : 78億次．5年前</p>
+                            <div class="time">4:42</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
